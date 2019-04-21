@@ -26,13 +26,9 @@ class StreamForm extends React.Component {
     );
   };
 
-  onSubmitDidClick = formValues => {
-    this.props.createStream(formValues);
-  };
-
   render() {
     return (
-      <form onSubmit={this.props.handleSubmit(this.onSubmitDidClick)} className="ui form error">
+      <form onSubmit={this.props.handleSubmit(this.props.onSubmit)} className="ui form error">
         <Field name="title" component={this.renderInput} label="Enter Title" />
         <Field name="description" component={this.renderInput} label="Enter Description" />
         <button className="ui button primary">Summit</button>
